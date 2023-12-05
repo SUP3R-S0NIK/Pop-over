@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet final</title>
+    <script defer src="/pwa.js"></script>
+    <link rel="manifest" href="/finalproject.webmanifest" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="theme">
+    <header>
+      <h1>Projet final :</h1>
+      <button
+        id="pwaInstall"
+        class="btn theme"
+        aria-label="Télécharger l'application"
+      >
+        Télécharger le projet
+      </button>
+    </header>
+    <main>
+      <div>
+        <h2 class="title">Pop-over</h2>
+        <section>
+          <p class="para">
+            Pop-over permet de désigner un élément qui sera affiché au premier
+            plan automatiquement via un bouton. Par défaut les éléments sont en
+            display : none et lorsque le bouton doté de l'attribut popovertarget
+            est activé l'élément apparaît.
+          </p>
+          <p class="para">
+            L'élément est donc affiché par-dessus la couche actuelle et n'est
+            pas influencé par la mise en forme de leur parent pour la position
+            ou le dépassement (overflow).
+          </p>
+          <pre>
+            <code>
+<span class="tag">&lt;button</span> popovertarget="my-popover"&gt;
+    Ouvrir le contenu "popover"
+<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;div</span> popover id="my-popover"&gt;Bonjour tout le monde ! <span class="tag">&lt;/div&gt;</span>
+            </code>
+        </pre>
+          <button
+            popovertarget="my-popover"
+            style="
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+              margin-top: 10px;
+            "
+          >
+            Ouvrir le contenu "popover"
+          </button>
+          <div popover id="my-popover">Bonjour tout le monde !</div>
+          <p class="para">
+            Pop-over ouvre le champ des possibles et peut être accompagné
+            d'autres fonctionnalités pour le compléter.
+          </p>
+        </section>
+      </div>
+      <div>
+        <h2 class="title">Transitions discrètes</h2>
+        <p class="para">
+          Les Transitions de propriété discrètes sont le parfait exemple de ce
+          qui peut compléter le pop-over puisqu's'agit de propriétés qui
+          n'étaient généralement pas animables dans le passé.
+        </p>
+        <p class="para">
+          Les animations vers et depuis la couche supérieure et les animations
+          vers et depuis display: none sont désormais possible et s'adapte
+          parfaitement à l'ouverture de pop-up comme on peut le voir avec la
+          barre des paramètres.
+        </p>
+        <section id="buttons">
+          <button id="HTML">HTML</button>
+          <button id="CSS">CSS</button>
+        </section>
+        <section>
+          <pre id="pre-HTML">
+    <code>
+      <span class="tag">&lt;div</span> class="settings-toolbar"<span class="tag">&gt;</span>
+      <span class="tag">&lt;h2 class="settings-heading"</span><span class="tag">&gt;</span>Paramètres<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;ul class="settings-list"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;li class="settings-item"</span><span class="tag">&gt;</span>
+              <span class="tag">&lt;button</span> popovertarget="theme-settings-popover"<span class="tag">&gt;</span>
+                  <span class="tag">&lt;span</span> aria-hidden="true"<span class="tag">&gt;</span>🎨<span class="tag">&lt;/span&gt;</span>
+                  <span class="tag">&lt;span</span> class="sr-only"<span class="tag">&gt;</span>Apparence<span class="tag">&lt;/span&gt;</span>
+              <span class="tag">&lt;/button&gt;</span>
+          <span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;/ul&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  
+  &lt;!-- Theme Settings --&gt;
+  <span class="tag">&lt;div</span> id="theme-settings-popover" 
+  class="settings-popover theme" popover<span class="tag">&gt;</span>
+      <span class="tag">&lt;button</span>
+          class="close-btn"
+          popovertarget="theme-settings-popover"
+          popovertargetaction="hide"<span class="tag">&gt;</span>
+          <span class="tag">&lt;span&gt;</span>❌<span class="tag">&lt;/span&gt;</span>
+          <span class="tag">&lt;span class="sr-only"&gt;</span>Fermer<span class="tag">&lt;/span&gt;</span>
+      <span class="tag">&lt;/button&gt;</span>
+      <span class="tag">&lt;h2&gt;</span>Thème<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;form&gt;</span>
+          <span class="tag">&lt;div class="settings-form-section"&gt;</span>
+              <span class="tag">&lt;fieldset class="two-by"&gt;</span>
+                  <span class="tag">&lt;div&gt;</span>
+                      <span class="tag">&lt;input</span>
+                          type="radio"
+                          checked
+                          id="light"
+                          name="theme"
+                          value="light"
+                          class="theme"<span class="tag">&gt;</span>
+                      <span class="tag">&lt;label for="light"&gt;</span>Light<span class="tag">&lt;/label&gt;</span>
+                  <span class="tag">&lt;/div&gt;</span>
+                  <span class="tag">&lt;div&gt;</span>
+                      <span class="tag">&lt;input</span>
+                          type="radio"
+                          id="dark"
+                          class="dark-button theme"
+                          name="theme"
+                          value="dark"<span class="tag">&gt;</span>
+                      <span class="tag">&lt;label for="dark"&gt;</span>Dark<span class="tag">&lt;/label&gt;</span>
+                  <span class="tag">&lt;/div&gt;</span>
+              <span class="tag">&lt;/fieldset&gt;</span>
+          <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/form&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+        </code>
+</pre>
+          <pre id="pre-CSS" class="d-none">
+  <code>
+      <span class="tag">.settings-popover</span> {
+          <span class="tag">&amp;:popover-open</span> {
+              <span class="tag">/* 0. BEFORE-OPEN STATE */</span>
+              <span class="tag">/* initial state for what we're animating *in* from, </span>
+              <span class="tag">       in this case: goes from lower (y + 20px) to center */</span>
+              <span class="tag">@starting-style {</span>
+                  transform: translateY(20px);
+                  opacity: 0;
+              <span class="tag">}</span>
+
+              <span class="tag">/* 1. OPEN STATE */</span>
+              <span class="tag">/* state when popover is open, BOTH:</span>
+              <span class="tag">       what we're transitioning *in* to </span>
+              <span class="tag">       and transitioning *out* from */</span>
+              transform: translateY(0);
+              opacity: 1;
+          <span class="tag">}</span>
+
+          <span class="tag">/* 2. AFTER-OPEN-IS-CLOSED STATE */</span>
+          <span class="tag">/* initial state for what we're animating *out* to , </span>
+          <span class="tag">      in this case: goes from center to (y - 50px) higher */</span>
+          transform: translateY(-50px);
+          opacity: 0;
+
+          <span class="tag">/* enumarate transitioning properties, including display */</span>
+          transition: transform 0.5s, opacity 0.5s, display 0.5s;
+      <span class="tag">}</span>
+
+      <span class="tag">/* etc. */</span>
+
+      <span class="tag">.settings-popover</span> {
+          background: rgb(255, 255, 255);
+          position: fixed;
+          margin: auto;
+          border: 1px solid #87ceeb;
+          padding: 2rem;
+          line-height: 2;
+          width: 350px;
+          box-shadow: 0 0 25px dimgray;
+          border-radius: 15px;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-popover button</span> {
+          background: none;
+          border: none;
+          filter: grayscale(1);
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-popover label</span> {
+          width: 100%;
+          font-weight: 600;
+          margin-left: 1px;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-popover input,</span>
+      <span class="tag">.settings-popover select</span> {
+          font-size: 1rem;
+          padding: 0.25rem 0.5rem;
+          width: 97%;
+          margin-left: 1px;
+          margin-top: 2px;
+          border-radius: 15px;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-popover h2</span> {
+          font-size: 1.75rem;
+          margin: 0px;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-form-section</span> {
+          display: grid;
+          margin-top: 1rem;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-popover::backdrop</span> {
+          background: rgb(170 210 220 / 0.5);
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-toolbar</span> {
+          background: #4a4a4a;
+          box-shadow: 0 0 25px dimgray;
+          padding: 0.5rem 1rem;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100vw;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-list</span> {
+          display: inline-grid;
+          gap: 0.5rem;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-item</span> {
+          grid-row: 1;
+      <span class="tag">}</span>
+
+      <span class="tag">.settings-list button</span> {
+          border-radius: 100%;
+          height: 2.5rem;
+          aspect-ratio: 1/1;
+          font-size: 1.5rem;
+          background: #e2f2ff;
+          border: 2px solid #87ceeb;
+          line-height: 0;
+      <span class="tag">}</span>
+
+      <span class="tag">select</span> {
+          width: 100%;
+      <span class="tag">}</span>
+
+      <span class="tag">.app</span> {
+          padding: 2rem;
+          max-width: 600px;
+          margin: 0 auto;
+      <span class="tag">}</span>
+
+      <span class="tag">.close-btn</span> {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+      <span class="tag">}</span>
+
+      <span class="tag">body</span> {
+          min-height: 100vh;
+          font-family: system-ui, sans-serif;
+          line-height: 1.5;
+          max-width: 99vw;
+          color: #4a4a4a;
+          background-color: #f4f1ea;
+      <span class="tag">}</span>
+
+      <span class="tag">main</span> {
+          padding-bottom: 75px;
+      <span class="tag">}</span>
+
+      <span class="tag">.dark</span> {
+          background-color: #303030;
+          color: white;
+      <span class="tag">}</span>
+
+      <span class="tag">input[type="radio"]</span> {
+          display: none;
+      <span class="tag">}</span>
+
+      <span class="tag">input[type="radio"].theme + label::before</span> {
+          opacity: 0.5;
+      <span class="tag">}</span>
+
+      <span class="tag">#dark + label::before</span> {
+          content: "🌙";
+      <span class="tag">}</span>
+
+      <span class="tag">#light + label::before</span> {
+          content: "☀️";
+      <span class="tag">}</span>
+
+      <span class="tag">input[type="radio"].theme:checked + label::before</span> {
+          opacity: 1;
+      <span class="tag">}</span>
+  </code>
+</pre>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <!-- Toolbar -->
+
+      <div class="settings-toolbar">
+        <h2 class="settings-heading">Paramètres</h2>
+        <ul class="settings-list">
+          <li class="settings-item">
+            <button popovertarget="profile-settings-popover">
+              <span aria-hidden="true">👤</span>
+              <span class="sr-only">Profil</span>
+            </button>
+          </li>
+          <li class="settings-item">
+            <button popovertarget="theme-settings-popover">
+              <span aria-hidden="true">🎨</span>
+              <span class="sr-only">Apparence</span>
+            </button>
+          </li>
+          <li class="settings-item">
+            <button popovertarget="region-settings-popover">
+              <span aria-hidden="true">🌎</span>
+              <span class="sr-only">Pays</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Popovers -->
+
+      <!-- User Settings -->
+      <div id="profile-settings-popover" class="settings-popover theme" popover>
+        <button
+          class="close-btn"
+          popovertarget="profile-settings-popover"
+          popovertargetaction="hide"
+        >
+          <span>❌</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h2>Profil</h2>
+        <p>(Je récolte toutes vos informations pour les revendre)</p>
+        <form>
+          <div class="settings-form-section">
+            <label for="name">Nom Prénom</label>
+            <input type="text" name="name" value="Cantet Alexis" />
+          </div>
+          <div class="settings-form-section">
+            <label for="stage">Situation stage:</label>
+            <select name="stage" id="stage">
+              <option>Votre situation :</option>
+              <option value="ok">J'ai un stage je suis trop chaud</option>
+              <option selected value="close">
+                J'ai pas de stage évidemment
+              </option>
+              <option value="no">Je n'ai pas commencé à chercher</option>
+              <option value="?">Un quoi ?</option>
+            </select>
+          </div>
+          <div class="settings-form-section">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" value="alexiscantet@gmail.com" />
+          </div>
+        </form>
+      </div>
+
+      <!-- Theme Settings -->
+      <div id="theme-settings-popover" class="settings-popover theme" popover>
+        <button
+          class="close-btn"
+          popovertarget="theme-settings-popover"
+          popovertargetaction="hide"
+        >
+          <span>❌</span>
+          <span class="sr-only">Fermer</span>
+        </button>
+        <h2>Thème</h2>
+        <form>
+          <div class="settings-form-section">
+            <fieldset class="two-by">
+              <div>
+                <input
+                  type="radio"
+                  checked
+                  id="light"
+                  name="theme"
+                  value="light"
+                  class="theme"
+                />
+                <label for="light">Light</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="dark"
+                  class="dark-button theme"
+                  name="theme"
+                  value="dark"
+                />
+                <label for="dark">Dark</label>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+
+      <!-- Region Settings -->
+      <div id="region-settings-popover" class="settings-popover theme" popover>
+        <button
+          class="close-btn"
+          popovertarget="region-settings-popover"
+          popovertargetaction="hide"
+        >
+          <span>❌</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h2>Options de région</h2>
+        <form>
+          <label for="language">Votre pays:</label>
+          <select name="lang" id="language">
+            <option>Votre pays :</option>
+            <option value="AF">Afrikaans</option>
+            <option value="SQ">Albanian</option>
+            <option value="AR">Arabic</option>
+            <option value="HY">Armenian</option>
+            <option value="EU">Basque</option>
+            <option value="BN">Bengali</option>
+            <option value="BG">Bulgarian</option>
+            <option value="CA">Catalan</option>
+            <option value="KM">Cambodian</option>
+            <option value="ZH">Chinese (Mandarin)</option>
+            <option value="HR">Croatian</option>
+            <option value="CS">Czech</option>
+            <option value="DA">Danish</option>
+            <option value="NL">Dutch</option>
+            <option value="EN">English</option>
+            <option value="ET">Estonian</option>
+            <option value="FJ">Fiji</option>
+            <option value="FI">Finnish</option>
+            <option selected value="FR">France</option>
+            <option value="KA">Georgian</option>
+            <option value="DE">German</option>
+            <option value="EL">Greek</option>
+            <option value="GU">Gujarati</option>
+            <option value="HE">Hebrew</option>
+            <option value="HI">Hindi</option>
+            <option value="HU">Hungarian</option>
+            <option value="IS">Icelandic</option>
+            <option value="ID">Indonesian</option>
+            <option value="GA">Irish</option>
+            <option value="IT">Italian</option>
+            <option value="JA">Japanese</option>
+            <option value="JW">Javanese</option>
+            <option value="KO">Korean</option>
+            <option value="LA">Latin</option>
+            <option value="LV">Latvian</option>
+            <option value="LT">Lithuanian</option>
+            <option value="MK">Macedonian</option>
+            <option value="MS">Malay</option>
+            <option value="ML">Malayalam</option>
+            <option value="MT">Maltese</option>
+            <option value="MI">Maori</option>
+            <option value="MR">Marathi</option>
+            <option value="MN">Mongolian</option>
+            <option value="NE">Nepali</option>
+            <option value="NO">Norwegian</option>
+            <option value="FA">Persian</option>
+            <option value="PL">Polish</option>
+            <option value="PT">Portuguese</option>
+            <option value="PA">Punjabi</option>
+            <option value="QU">Quechua</option>
+            <option value="RO">Romanian</option>
+            <option value="RU">Russian</option>
+            <option value="SM">Samoan</option>
+            <option value="SR">Serbian</option>
+            <option value="SK">Slovak</option>
+            <option value="SL">Slovenian</option>
+            <option value="ES">Spanish</option>
+            <option value="SW">Swahili</option>
+            <option value="SV">Swedish</option>
+            <option value="TA">Tamil</option>
+            <option value="TT">Tatar</option>
+            <option value="TE">Telugu</option>
+            <option value="TH">Thai</option>
+            <option value="BO">Tibetan</option>
+            <option value="TO">Tonga</option>
+            <option value="TR">Turkish</option>
+            <option value="UK">Ukrainian</option>
+            <option value="UR">Urdu</option>
+            <option value="UZ">Uzbek</option>
+            <option value="VI">Vietnamese</option>
+            <option value="CY">Welsh</option>
+            <option value="XH">Xhosa</option>
+          </select>
+        </form>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

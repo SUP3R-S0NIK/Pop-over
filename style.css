@@ -1,0 +1,233 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+header {
+  height: fit-content;
+  text-align: center;
+  margin: 20px;
+  font-size: 1.1rem;
+}
+.title {
+  font-size: 1.8rem;
+  margin: 10px;
+  text-decoration: underline;
+}
+.para {
+  margin: 10px;
+}
+.btn {
+  border-radius: 15px;
+  padding: 5px 8px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  box-shadow: 0 0 25px dimgray;
+  background-color: #f4f1ea;
+  border: 1px solid #303030;
+}
+#buttons {
+  margin-left: 10px;
+}
+pre {
+  background-color: #303030;
+  color: white;
+  display: inline-block;
+  width: 99%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 20px;
+}
+.tag {
+  color: rgb(50, 190, 50);
+}
+code {
+  text-align: center;
+  width: 20%;
+  padding: 15px;
+  font-size: 0.7rem;
+}
+.settings-popover {
+  &:popover-open {
+    /*   0. BEFORE-OPEN STATE   */
+    /*  initial state for what we're animating *in* from, 
+          in this case: goes from lower (y + 20px) to center  */
+    @starting-style {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    /*   1. OPEN STATE   */
+    /*  state when popover is open, BOTH:
+          what we're transitioning *in* to 
+          and transitioning *out* from */
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /*   2. AFTER-OPEN-IS-CLOSED STATE   */
+  /*  initial state for what we're animating *out* to , 
+        in this case: goes from center to (y - 50px) higher */
+  transform: translateY(-50px);
+  opacity: 0;
+
+  /*  enumarate transitioning properties, including display */
+  transition: transform 0.5s, opacity 0.5s, display 0.5s;
+}
+
+/* etc. */
+
+.settings-popover {
+  background: rgb(255, 255, 255);
+  position: fixed;
+  margin: auto;
+  border: 1px solid #87ceeb;
+  padding: 2rem;
+  line-height: 2;
+  width: 350px;
+  box-shadow: 0 0 25px dimgray;
+  border-radius: 15px;
+}
+
+.settings-popover button {
+  background: none;
+  border: none;
+  filter: grayscale(1);
+}
+
+.settings-popover label {
+  width: 100%;
+  font-weight: 600;
+  margin-left: 1px;
+}
+
+.settings-popover input,
+.settings-popover select {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  width: 97%;
+  margin-left: 1px;
+  margin-top: 2px;
+  border-radius: 15px;
+}
+
+.settings-popover h2 {
+  font-size: 1.75rem;
+  margin: 0px;
+}
+
+.settings-form-section {
+  display: grid;
+  margin-top: 1rem;
+}
+
+.settings-popover::backdrop {
+  background: rgb(170 210 220 / 0.5);
+}
+
+.settings-toolbar {
+  background: #4a4a4a;
+  box-shadow: 0 0 25px dimgray;
+  padding: 0.5rem 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.settings-list {
+  display: inline-grid;
+  gap: 0.5rem;
+}
+
+.settings-item {
+  grid-row: 1;
+}
+
+.settings-list button {
+  border-radius: 100%;
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  font-size: 1.5rem;
+  background: #e2f2ff;
+  border: 2px solid #87ceeb;
+  line-height: 0;
+}
+
+select {
+  width: 100%;
+}
+
+.app {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  max-width: 99vw;
+  color: #4a4a4a;
+  background-color: #f4f1ea;
+}
+main {
+  padding-bottom: 75px;
+}
+.dark {
+  background-color: #303030;
+  color: white;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"].theme + label::before {
+  opacity: 0.5;
+}
+#dark + label::before {
+  content: "🌙";
+}
+#light + label::before {
+  content: "☀️";
+}
+
+input[type="radio"].theme:checked + label::before {
+  opacity: 1;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin-right: 10px;
+}
+/* utils */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.two-by {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border: 0px;
+}
+.d-none {
+  display: none;
+}
