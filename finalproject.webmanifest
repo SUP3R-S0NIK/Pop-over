@@ -2,57 +2,57 @@
   "name": "Pop-over",
   "short_name": "POP",
   "description": "Créez, inspirez, délirez",
-  "start_url": "/index.html",
+  "start_url": "/index.php",
   "display": "standalone",
   "background_color": "#FEFFFE",
   "theme_color": "#101A31",
   "icons": [
     {
-      "src": "assets/icons/icon-72x72.png",
+      "src": "/popover.jpg",
       "sizes": "72x72",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-96x96.png",
+      "src": "/popover.jpg",
       "sizes": "96x96",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-128x128.png",
+      "src": "/popover.jpg",
       "sizes": "128x128",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-144x144.png",
+      "src": "/popover.jpg",
       "sizes": "144x144",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-152x152.png",
+      "src": "/popover.jpg",
       "sizes": "152x152",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-192x192.png",
+      "src": "/popover.jpg",
       "sizes": "192x192",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-384x384.png",
+      "src": "/popover.jpg",
       "sizes": "384x384",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-512x512.png",
+      "src": "/popover.jpg",
       "sizes": "512x512",
-      "type": "popover.png",
+      "type": "image/png",
       "purpose": "maskable any"
     }
   ]

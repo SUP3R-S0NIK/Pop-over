@@ -228,6 +228,9 @@ li {
   gap: 1rem;
   border: 0px;
 }
+#pwaInstall {
+  cursor: pointer;
+}
 .d-none {
   display: none;
 }
