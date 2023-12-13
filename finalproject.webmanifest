@@ -2,7 +2,7 @@
   "name": "Pop-over",
   "short_name": "POP",
   "description": "Créez, inspirez, délirez",
-  "start_url": "/index.php",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FEFFFE",
   "theme_color": "#101A31",
