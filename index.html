@@ -40,7 +40,9 @@
 <span class="tag">&lt;button</span> popovertarget="my-popover"&gt;
     Ouvrir le contenu "popover"
 <span class="tag">&lt;/button&gt;</span>
-<span class="tag">&lt;div</span> popover id="my-popover"&gt;Bonjour tout le monde ! <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div popover id="my-popover"&gt;</span>
+  Bonjour tout le monde ! 
+<span class="tag">&lt;/div&gt;</span>
             </code>
         </pre>
           <button
@@ -86,7 +88,8 @@
       <span class="tag">&lt;h2 class="settings-heading"</span><span class="tag">&gt;</span>Paramètres<span class="tag">&lt;/h2&gt;</span>
       <span class="tag">&lt;ul class="settings-list"</span><span class="tag">&gt;</span>
           <span class="tag">&lt;li class="settings-item"</span><span class="tag">&gt;</span>
-              <span class="tag">&lt;button</span> popovertarget="theme-settings-popover"<span class="tag">&gt;</span>
+              <span class="tag">&lt;button</span> popovertarget="theme-settings
+              -popover"<span class="tag">&gt;</span>
                   <span class="tag">&lt;span</span> aria-hidden="true"<span class="tag">&gt;</span>🎨<span class="tag">&lt;/span&gt;</span>
                   <span class="tag">&lt;span</span> class="sr-only"<span class="tag">&gt;</span>Apparence<span class="tag">&lt;/span&gt;</span>
               <span class="tag">&lt;/button&gt;</span>
@@ -138,8 +141,10 @@
       <span class="tag">.settings-popover</span> {
           <span class="tag">&amp;:popover-open</span> {
               <span class="tag">/* 0. BEFORE-OPEN STATE */</span>
-              <span class="tag">/* initial state for what we're animating *in* from, </span>
-              <span class="tag">       in this case: goes from lower (y + 20px) to center */</span>
+              <span class="tag">/* initial state for what we're animating 
+                  *in* from, </span>
+              <span class="tag">       in this case: goes from lower 
+                (y + 20px) to center */</span>
               <span class="tag">@starting-style {</span>
                   transform: translateY(20px);
                   opacity: 0;
@@ -154,13 +159,17 @@
           <span class="tag">}</span>
 
           <span class="tag">/* 2. AFTER-OPEN-IS-CLOSED STATE */</span>
-          <span class="tag">/* initial state for what we're animating *out* to , </span>
-          <span class="tag">in this case: goes from center to (y - 50px) higher */</span>
+          <span class="tag">/* initial state for what we're animating 
+            *out* to , </span>
+          <span class="tag">in this case: goes from center to 
+            (y - 50px) higher */</span>
           transform: translateY(-50px);
           opacity: 0;
 
-          <span class="tag">/* enumarate transitioning properties, including display */</span>
-          transition: transform 0.5s, opacity 0.5s, display 0.5s;
+          <span class="tag">/* enumarate transitioning properties, 
+            including display */</span>
+          transition: transform 0.5s, opacity 0.5s, 
+          display 0.5s;
       <span class="tag">}</span>
 
       <span class="tag">/* etc. */</span>
