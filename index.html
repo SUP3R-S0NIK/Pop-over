@@ -37,12 +37,12 @@
           </p>
           <pre>
             <code>
-<span class="tag">&lt;button</span> popovertarget="my-popover"&gt;
+  <span class="tag">&lt;button popovertarget="my-popover"&gt;</span> 
     Ouvrir le contenu "popover"
-<span class="tag">&lt;/button&gt;</span>
-<span class="tag">&lt;div popover id="my-popover"&gt;</span>
-  Bonjour tout le monde ! 
-<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;div popover id="my-popover"&gt;</span>
+    Bonjour tout le monde ! 
+  <span class="tag">&lt;/div&gt;</span>
             </code>
         </pre>
           <button
@@ -312,30 +312,7 @@
     </main>
     <footer>
       <!-- Toolbar -->
-
-      <div class="settings-toolbar">
-        <h2 class="settings-heading">Paramètres</h2>
-        <ul class="settings-list">
-          <li class="settings-item">
-            <button popovertarget="profile-settings-popover">
-              <span aria-hidden="true">👤</span>
-              <span class="sr-only">Profil</span>
-            </button>
-          </li>
-          <li class="settings-item">
-            <button popovertarget="theme-settings-popover">
-              <span aria-hidden="true">🎨</span>
-              <span class="sr-only">Apparence</span>
-            </button>
-          </li>
-          <li class="settings-item">
-            <button popovertarget="region-settings-popover">
-              <span aria-hidden="true">🌎</span>
-              <span class="sr-only">Pays</span>
-            </button>
-          </li>
-        </ul>
-      </div>
+      <menu-bot></menu-bot>
 
       <!-- Popovers -->
 
@@ -507,5 +484,6 @@
       </div>
     </footer>
     <script src="./script.js"></script>
+    <script src="./menu.js"></script>
   </body>
 </html>
